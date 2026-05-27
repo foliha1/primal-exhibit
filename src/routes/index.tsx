@@ -52,9 +52,6 @@ function Index() {
               "linear-gradient(to right, transparent 0%, transparent 35%, #22211F 65%, #22211F 100%)",
           }}
         />
-
-          }}
-        />
       </div>
 
 
