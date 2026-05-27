@@ -27,8 +27,6 @@ const spring = { type: "spring" as const, stiffness: 60, damping: 18, mass: 1 };
 
 function Index() {
   const isMobile = useIsMobile();
-  const videoSize = isMobile ? "110vh" : "165vh";
-  const videoHeight = isMobile ? "110vw" : "165vw";
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden"
