@@ -52,23 +52,36 @@ function Index() {
       />
 
       {/* Top lockup — centered at top */}
-      <motion.img
-        src="/logos/EXPOSURE_Lockup_Light.svg"
-        alt="EXPOSURE by 29029"
-        className="absolute left-1/2 z-10 -translate-x-1/2 w-[140px] md:w-[180px]"
-        style={{ top: 48 }}
+      <motion.div
+        aria-label="EXPOSURE by 29029"
+        role="img"
+        className="absolute left-1/2 z-10 -translate-x-1/2 w-[140px] h-[60px] md:w-[180px] md:h-[76px]"
+        style={{
+          top: 48,
+          backgroundColor: "#E7E6E1",
+          WebkitMaskImage: "url(/logos/EXPOSURE_Lockup_Light.svg)",
+          maskImage: "url(/logos/EXPOSURE_Lockup_Light.svg)",
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "contain",
+          maskSize: "contain",
+          WebkitMaskPosition: "center",
+          maskPosition: "center",
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.0, delay: 2.2, ease: easeOut }}
       />
+
 
       {/* Type column — centered horizontally and vertically */}
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
         <div className="flex w-full max-w-[640px] flex-col items-center">
           <h1
             className="font-serif text-[44px] uppercase md:text-[88px]"
-            style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
+            style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#E7E6E1", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
           >
+
             {(() => {
               const words = [
                 { text: "Most" },
@@ -103,14 +116,15 @@ function Index() {
 
 
           <motion.p
-            className="mt-8 max-w-[480px] font-sans text-[16px]"
+            className="mt-8 max-w-[480px] font-sans text-[18px]"
             style={{
               fontWeight: 500,
-              color: "rgba(245,241,232,0.72)",
+              color: "#E7E6E1",
               textShadow: "0 1px 16px rgba(0,0,0,0.5)",
               lineHeight: 1.6,
               letterSpacing: "0.02em",
             }}
+
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.0, delay: 1.9, ease: easeOut }}
