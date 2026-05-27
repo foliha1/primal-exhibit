@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
+const easePush = [0.36, 0.01, 0.39, 1] as const;
 
 function Index() {
   return (
