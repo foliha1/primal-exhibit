@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
+const easePush = [0.36, 0.01, 0.39, 1] as const;
 
 function Index() {
   return (
@@ -66,7 +67,7 @@ function Index() {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.0, delay: 3.2, ease: easeOut }}
+        transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
 
       />
 
@@ -81,9 +82,13 @@ function Index() {
 
             <motion.span
               style={{ display: "block" }}
-              initial={{ opacity: 0, filter: "blur(20px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.6, delay: 0.4, ease: easeOut }}
+              initial={{ opacity: 0, filter: "blur(20px)", y: 140 }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{
+                opacity: { duration: 2.0, delay: 0, ease: easeOut },
+                filter: { duration: 2.0, delay: 0, ease: easeOut },
+                y: { duration: 1.2, delay: 2.4, ease: easePush },
+              }}
             >
               <span style={{ display: "block", whiteSpace: "nowrap" }}>Most teams would</span>
               <span style={{ display: "block", whiteSpace: "nowrap" }}>
@@ -107,7 +112,7 @@ function Index() {
 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.0, delay: 2.2, ease: easeOut }}
+            transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
           >
             {`Some moments don't build a team. They reveal one.\n\n\nBy the time most leaders see what they're working with, the moment has already passed its verdict. EXPOSURE puts that revelation on your calendar, on your terms, before the stakes choose the timing for you.`}
           </motion.p>
@@ -133,7 +138,7 @@ function Index() {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.0, delay: 3.6, ease: easeOut }}
+        transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
       />
 
     </main>
