@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
+import { FlareVideo } from "@/components/FlareVideo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,15 +30,10 @@ function Index() {
       className="relative min-h-screen w-full overflow-hidden"
       style={{ backgroundColor: "#0A0A0A" }}
     >
-      {/* Video flare — right 55% on desktop, full-bleed dim on mobile */}
-      <video
-        autoPlay
-        muted
-        playsInline
-        loop
-        preload="auto"
+      {/* Video flare — two stacked videos crossfading to mask the loop seam */}
+      <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60 md:left-auto md:right-0 md:top-0 md:h-screen md:w-[55vw] md:opacity-100"
+        className="pointer-events-none absolute inset-0 opacity-60 md:left-auto md:right-0 md:top-0 md:bottom-0 md:h-screen md:w-[55vw] md:opacity-100"
         style={{
           WebkitMaskImage:
             "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
@@ -45,8 +41,10 @@ function Index() {
             "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
         }}
       >
-        <source src="/exposure-flare.mp4" type="video/mp4" />
-      </video>
+        <FlareVideo className="absolute inset-0 h-full w-full object-cover" />
+      </div>
+
+
 
       {/* Grain overlay — above video, below type */}
       <div
