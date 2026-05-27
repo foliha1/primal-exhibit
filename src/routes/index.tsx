@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { FlareVideo } from "@/components/FlareVideo";
-import { FlareSVG } from "@/components/FlareSVG";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,20 +30,26 @@ function Index() {
       className="relative min-h-screen w-full overflow-hidden"
       style={{ backgroundColor: "#22211F" }}
     >
-      {/* SVG flare — banded gradient with organic displacement */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <FlareSVG />
-      </div>
-
       {/* Video flare — rotated 90° CW, anchored to top of viewport */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 md:opacity-100"
-        style={{ backgroundColor: "transparent" }}
+        style={{ backgroundColor: "#22211F" }}
       >
         <FlareVideo />
       </div>
 
+
+
+      {/* Grain overlay — above video, below type */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+        }}
+      />
 
       {/* Top lockup — centered at top */}
       <motion.div
