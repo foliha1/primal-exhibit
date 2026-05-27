@@ -31,11 +31,7 @@ function Index() {
       style={{ backgroundColor: "#22211F" }}
     >
       {/* Video flare — rotated 90° CW, anchored to top of viewport */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 md:opacity-100"
-        style={{ backgroundColor: "#22211F" }}
-      >
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <FlareVideo />
       </div>
 
