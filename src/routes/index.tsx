@@ -26,12 +26,17 @@ export const Route = createFileRoute("/")({
 const spring = { type: "spring" as const, stiffness: 60, damping: 18, mass: 1 };
 
 function Index() {
+  const isMobile = useIsMobile();
+  const videoSize = isMobile ? "110vh" : "165vh";
+  const videoHeight = isMobile ? "110vw" : "165vw";
+  const mask =
+    "linear-gradient(to right, transparent 0%, transparent 55%, #22211F 75%, #22211F 100%)";
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden"
       style={{ backgroundColor: "#22211F" }}
     >
-      {/* Video flare — rotated 90° CW, full-bleed beneath the centered type column */}
+      {/* Video flare — rotated 90° CW, anchored to top of viewport */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 md:opacity-100"
@@ -41,19 +46,18 @@ function Index() {
           style={{
             position: "absolute",
             left: 0,
-            bottom: 0,
-            width: "110vh",
-            height: "110vw",
+            top: 0,
+            width: videoSize,
+            height: videoHeight,
             objectFit: "cover",
             transform: "rotate(90deg)",
             transformOrigin: "center center",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, transparent 35%, #22211F 65%, #22211F 100%)",
-            maskImage:
-              "linear-gradient(to right, transparent 0%, transparent 35%, #22211F 65%, #22211F 100%)",
+            WebkitMaskImage: mask,
+            maskImage: mask,
           }}
         />
       </div>
+
 
 
       {/* Grain overlay — above video, below type */}
