@@ -13,8 +13,9 @@ function useFlareSize() {
       //   visual_height = CSS width
       // We want visual_width >= vw AND visual_height >= vh, preserving 9:16 (visual w:h).
       const visualW = Math.max(vw, vh * 9 / 16);
-      const visualH = visualW * 16 / 9;
+      const visualH = Math.max(vh, visualW * 16 / 9);
       setSize({ w: visualH, h: visualW }); // CSS dims (swapped)
+      console.log("[FlareVideo]", { vw, vh, cssW: visualH, cssH: visualW, visualW, visualH });
     };
     compute();
     window.addEventListener("resize", compute);
