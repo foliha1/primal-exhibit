@@ -116,14 +116,15 @@ function Index() {
 
 
           <motion.p
-            className="mt-8 max-w-[480px] font-sans text-[16px]"
+            className="mt-8 max-w-[480px] font-sans text-[18px]"
             style={{
               fontWeight: 500,
-              color: "rgba(245,241,232,0.72)",
+              color: "#E7E6E1",
               textShadow: "0 1px 16px rgba(0,0,0,0.5)",
               lineHeight: 1.6,
               letterSpacing: "0.02em",
             }}
+
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.0, delay: 1.9, ease: easeOut }}
