@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
-const easePush = [0.36, 0.01, 0.39, 1] as const;
+const easePush = [0.71, 0.02, 0.29, 0.88] as const;
 
 function Index() {
   return (
@@ -67,7 +67,7 @@ function Index() {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
+        transition={{ duration: 2.0, delay: 3.0, ease: easeOut }}
 
       />
 
@@ -87,7 +87,7 @@ function Index() {
               transition={{
                 opacity: { duration: 2.0, delay: 0, ease: easeOut },
                 filter: { duration: 2.0, delay: 0, ease: easeOut },
-                y: { duration: 1.2, delay: 2.4, ease: easePush },
+                y: { duration: 1.5, delay: 2.4, ease: easePush },
               }}
             >
               <span style={{ display: "block", whiteSpace: "nowrap" }}>Most teams would</span>
@@ -112,7 +112,7 @@ function Index() {
 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
+            transition={{ duration: 2.0, delay: 3.0, ease: easeOut }}
           >
             {`Some moments don't build a team. They reveal one.\n\n\nBy the time most leaders see what they're working with, the moment has already passed its verdict. EXPOSURE puts that revelation on your calendar, on your terms, before the stakes choose the timing for you.`}
           </motion.p>
@@ -138,7 +138,7 @@ function Index() {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
+        transition={{ duration: 2.0, delay: 3.0, ease: easeOut }}
       />
 
     </main>
