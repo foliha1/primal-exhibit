@@ -106,10 +106,14 @@ function Index() {
                 y: { duration: 1.5, delay: 2.5, ease: easePush },
               }}
             >
-              <span style={{ display: "block" }}>
+              <span className="lg:hidden" style={{ display: "block" }}>
                 Most teams would <em style={{ fontStyle: "italic" }}>Never</em>
               </span>
-              <span style={{ display: "block" }}>do this.</span>
+              <span className="lg:hidden" style={{ display: "block" }}>do this.</span>
+              <span className="hidden lg:block">Most teams would</span>
+              <span className="hidden lg:block">
+                <em style={{ fontStyle: "italic" }}>Never</em> do this.
+              </span>
             </motion.span>
 
           </h1>
