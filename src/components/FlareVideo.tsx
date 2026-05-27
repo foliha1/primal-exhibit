@@ -1,4 +1,4 @@
-const SRC = "/exposure-flare-vertical.mp4";
+const SRC = "/exposure-flare-square.mp4";
 
 export function FlareVideo({
   className,
