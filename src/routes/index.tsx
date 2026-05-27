@@ -28,12 +28,13 @@ function Index() {
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden"
-      style={{ backgroundColor: "#0A0A0A" }}
+      style={{ backgroundColor: "#22211F" }}
     >
       {/* Video flare — rotated 90° CW, full-bleed beneath the centered type column */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 md:opacity-100"
+        style={{ backgroundColor: "#22211F" }}
       >
         <FlareVideo
           style={{
@@ -46,9 +47,9 @@ function Index() {
             transform: "translate(-50%, -50%) rotate(90deg)",
             transformOrigin: "center center",
             WebkitMaskImage:
-              "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
+              "linear-gradient(to right, transparent 0%, #22211F 30%, #22211F 100%)",
             maskImage:
-              "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
+              "linear-gradient(to right, transparent 0%, #22211F 30%, #22211F 100%)",
 
           }}
         />
