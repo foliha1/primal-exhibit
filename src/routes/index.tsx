@@ -37,16 +37,7 @@ function Index() {
         style={{ backgroundColor: "#22211F" }}
       >
         <FlareVideo
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100vh",
-            height: "100vw",
-            objectFit: "cover",
-            transform: "rotate(90deg)",
-            transformOrigin: "center center",
-          }}
+          className="absolute top-0 left-0 origin-top-left object-cover rotate-90 -translate-y-full w-[120vh] h-[67.5vh] scale-150 md:w-[calc(100vw*16/9)] md:h-[100vw] md:scale-100"
         />
       </div>
 
