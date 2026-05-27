@@ -116,6 +116,7 @@ function Index() {
 
 
           <motion.p
+            ref={bodyRef}
             className="mt-8 max-w-[560px] font-sans text-[16px]"
             style={{
               fontWeight: 500,
