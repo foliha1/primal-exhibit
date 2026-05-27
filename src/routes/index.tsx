@@ -26,7 +26,6 @@ export const Route = createFileRoute("/")({
 const spring = { type: "spring" as const, stiffness: 60, damping: 18, mass: 1 };
 
 function Index() {
-  const isMobile = useIsMobile();
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden"
