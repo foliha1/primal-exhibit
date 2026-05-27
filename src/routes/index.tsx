@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
+import { FlareVideo } from "@/components/FlareVideo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
