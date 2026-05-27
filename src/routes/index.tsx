@@ -82,9 +82,13 @@ function Index() {
 
             <motion.span
               style={{ display: "block" }}
-              initial={{ opacity: 0, filter: "blur(20px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.6, delay: 0.4, ease: easeOut }}
+              initial={{ opacity: 0, filter: "blur(20px)", y: 140 }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{
+                opacity: { duration: 2.0, delay: 0, ease: easeOut },
+                filter: { duration: 2.0, delay: 0, ease: easeOut },
+                y: { duration: 1.2, delay: 2.4, ease: easePush },
+              }}
             >
               <span style={{ display: "block", whiteSpace: "nowrap" }}>Most teams would</span>
               <span style={{ display: "block", whiteSpace: "nowrap" }}>
