@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const SRC = "/exposure-flare-pingpong.mp4";
 
@@ -28,36 +28,13 @@ export function FlareVideo({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const { w, h } = useFlareSize();
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const start = () => {
-      video.playbackRate = 1;
-      video.currentTime = 0;
-      const p = video.play();
-      if (p) p.catch(() => {});
-    };
-
-    if (video.readyState >= 1 && video.duration > 0) {
-      start();
-    } else {
-      video.addEventListener("loadedmetadata", start, { once: true });
-    }
-
-    return () => {
-      video.removeEventListener("loadedmetadata", start);
-    };
-  }, []);
 
   return (
     <video
-      ref={videoRef}
       muted
       playsInline
+      autoPlay
       loop
       preload="auto"
       aria-hidden
