@@ -118,11 +118,22 @@ function Index() {
       </div>
 
       {/* Bottom triangle mark — centered at bottom */}
-      <motion.img
-        src="/logos/29029_Triangle.svg"
-        alt="29029"
-        className="absolute left-1/2 z-10 -translate-x-1/2 w-[24px] md:w-[32px]"
-        style={{ bottom: 48 }}
+      <motion.div
+        aria-label="29029"
+        role="img"
+        className="absolute left-1/2 z-10 -translate-x-1/2 w-[24px] h-[24px] md:w-[32px] md:h-[32px]"
+        style={{
+          bottom: 48,
+          backgroundColor: "#E7E6E1",
+          WebkitMaskImage: "url(/logos/29029_Triangle.svg)",
+          maskImage: "url(/logos/29029_Triangle.svg)",
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "contain",
+          maskSize: "contain",
+          WebkitMaskPosition: "center",
+          maskPosition: "center",
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.0, delay: 3.6, ease: easeOut }}
