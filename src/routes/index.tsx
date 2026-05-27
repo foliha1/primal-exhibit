@@ -29,8 +29,6 @@ function Index() {
   const isMobile = useIsMobile();
   const videoSize = isMobile ? "110vh" : "165vh";
   const videoHeight = isMobile ? "110vw" : "165vw";
-  const mask =
-    "linear-gradient(to right, transparent 0%, transparent 55%, #22211F 75%, #22211F 100%)";
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden"
