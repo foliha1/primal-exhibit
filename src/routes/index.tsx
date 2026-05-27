@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const spring = { type: "spring" as const, stiffness: 60, damping: 18, mass: 1 };
+const easeOut = [0.16, 1, 0.3, 1] as const;
 
 function Index() {
   return (
