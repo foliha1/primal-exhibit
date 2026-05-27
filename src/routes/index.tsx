@@ -72,7 +72,7 @@ function Index() {
 
 
       {/* Type column — centered horizontally and vertically */}
-      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-10 md:px-12 lg:px-6 text-center">
         <div className="flex w-full max-w-[900px] flex-col items-center">
           <h1
             className="font-serif text-[35px] uppercase md:text-[70px]"
