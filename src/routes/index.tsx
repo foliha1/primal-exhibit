@@ -60,7 +60,7 @@ function Index() {
         <div className="flex w-full max-w-[640px] flex-col items-center">
           <motion.h1
             className="font-serif text-[44px] leading-[1.04] tracking-[-0.02em] md:text-[88px]"
-            style={{ color: "#F5F1E8" }}
+            style={{ color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 0.4 }}
