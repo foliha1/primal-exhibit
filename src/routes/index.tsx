@@ -68,7 +68,7 @@ function Index() {
             What you{" "}
             <motion.em
               className="italic"
-              style={{ fontStyle: "italic", color: "#F5F1E8" }}
+              style={{ fontStyle: "italic", color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...spring, delay: 0.6 }}
