@@ -8,14 +8,11 @@ function useFlareSize() {
     const compute = () => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      // After rotate(90deg) + translateY(-100%) with origin top-left:
-      //   visual_width  = CSS height
-      //   visual_height = CSS width
-      // We want visual_width >= vw AND visual_height >= vh, preserving 9:16 (visual w:h).
-      const visualW = Math.max(vw, vh * 9 / 16);
-      const visualH = Math.max(vh, visualW * 16 / 9);
-      setSize({ w: visualH, h: visualW }); // CSS dims (swapped)
-      console.log("[FlareVideo]", { vw, vh, cssW: visualH, cssH: visualW, visualW, visualH });
+      // Visual (post-rotate) width/height: cover viewport on both axes, keep 9:16.
+      const visualW = Math.max(vw, (vh * 9) / 16) * 1.1; // 10% bleed
+      const visualH = Math.max(vh * 1.1, (visualW * 16) / 9);
+      // CSS dims swap because of rotate(90deg)
+      setSize({ w: visualH, h: visualW });
     };
     compute();
     window.addEventListener("resize", compute);
