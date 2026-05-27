@@ -138,7 +138,7 @@ function Index() {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.0, delay: 3.6, ease: easeOut }}
+        transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
       />
 
     </main>
