@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FlareVideo } from "@/components/FlareVideo";
 
 export const Route = createFileRoute("/")({
@@ -29,6 +29,7 @@ const easePush = [0.71, 0.02, 0.29, 0.88] as const;
 function Index() {
   const bodyRef = useRef<HTMLParagraphElement>(null);
   const [headlineOffset, setHeadlineOffset] = useState(140);
+  const [videoReady, setVideoReady] = useState(false);
 
   useLayoutEffect(() => {
     const compute = () => {
@@ -42,6 +43,11 @@ function Index() {
     return () => window.removeEventListener("resize", compute);
   }, []);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => setVideoReady(true), 4000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden"
@@ -49,7 +55,7 @@ function Index() {
     >
       {/* Video flare — rotated 90° CW, anchored to top of viewport */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <FlareVideo />
+        <FlareVideo onReady={() => setVideoReady(true)} />
       </div>
 
 
@@ -82,7 +88,7 @@ function Index() {
           maskPosition: "center",
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
 
       />
@@ -99,7 +105,7 @@ function Index() {
             <motion.span
               style={{ display: "block" }}
               initial={{ opacity: 0, filter: "blur(20px)", y: headlineOffset }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              animate={videoReady ? { opacity: 1, filter: "blur(0px)", y: 0 } : { opacity: 0, filter: "blur(20px)", y: headlineOffset }}
               transition={{
                 opacity: { duration: 2.0, delay: 0.1, ease: easeOut },
                 filter: { duration: 2.0, delay: 0.1, ease: easeOut },
@@ -128,7 +134,7 @@ function Index() {
             }}
 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
           >
             {`Some moments don't build a team.\nThey reveal one.\n\nBy the time most leaders see what they're working with, the moment has already passed its verdict. EXPOSURE puts that revelation on your calendar, on your terms, before the stakes choose the timing for you.`}
@@ -154,7 +160,7 @@ function Index() {
           maskPosition: "center",
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
       />
 

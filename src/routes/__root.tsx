@@ -86,6 +86,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "preload",
+        as: "video",
+        href: "/exposure-flare-square.mp4",
+        type: "video/mp4",
+      },
     ],
   }),
   shellComponent: RootShell,
