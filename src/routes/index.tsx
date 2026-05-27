@@ -78,7 +78,7 @@ function Index() {
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
         <div className="flex w-full max-w-[640px] flex-col items-center">
           <h1
-            className="font-serif text-[44px] uppercase md:text-[88px]"
+            className="font-serif text-[35px] uppercase md:text-[70px]"
             style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#E7E6E1", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
           >
 
