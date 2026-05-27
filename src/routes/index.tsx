@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { FlareVideo } from "@/components/FlareVideo";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,9 +25,6 @@ export const Route = createFileRoute("/")({
 const spring = { type: "spring" as const, stiffness: 60, damping: 18, mass: 1 };
 
 function Index() {
-  const isMobile = useIsMobile();
-  const videoSize = isMobile ? "110vh" : "165vh";
-  const videoHeight = isMobile ? "110vw" : "165vw";
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden"
@@ -45,8 +41,8 @@ function Index() {
             position: "absolute",
             left: 0,
             top: 0,
-            width: videoSize,
-            height: videoHeight,
+            width: "100vh",
+            height: "100vw",
             objectFit: "cover",
             transform: "rotate(90deg)",
             transformOrigin: "center center",
