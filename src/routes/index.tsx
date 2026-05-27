@@ -39,17 +39,19 @@ function Index() {
         <FlareVideo
           style={{
             position: "absolute",
-            left: "50%",
-            top: "50%",
+            left: 0,
+            bottom: 0,
             width: "110vh",
             height: "110vw",
             objectFit: "cover",
-            transform: "translate(-50%, -50%) rotate(90deg)",
+            transform: "rotate(90deg)",
             transformOrigin: "center center",
             WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, #22211F 30%, #22211F 100%)",
+              "linear-gradient(to right, transparent 0%, transparent 35%, #22211F 65%, #22211F 100%)",
             maskImage:
-              "linear-gradient(to right, transparent 0%, #22211F 30%, #22211F 100%)",
+              "linear-gradient(to right, transparent 0%, transparent 35%, #22211F 65%, #22211F 100%)",
+          }}
+        />
 
           }}
         />
