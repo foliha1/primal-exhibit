@@ -55,6 +55,17 @@ function Index() {
         }}
       />
 
+      {/* Top lockup — centered at top */}
+      <motion.img
+        src="/logos/EXPOSURE_Lockup_Light.svg"
+        alt="EXPOSURE by 29029"
+        className="absolute left-1/2 z-10 -translate-x-1/2 w-[140px] md:w-[180px]"
+        style={{ top: 48 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+      />
+
       {/* Type column — centered horizontally and vertically */}
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
         <div className="flex w-full max-w-[640px] flex-col items-center">
@@ -93,26 +104,16 @@ function Index() {
         </div>
       </div>
 
-      {/* Logo lockup — bottom, centered */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 text-center"
+      {/* Bottom triangle mark — centered at bottom */}
+      <motion.img
+        src="/logos/29029_Triangle.svg"
+        alt="29029"
+        className="absolute left-1/2 z-10 -translate-x-1/2 w-[24px] md:w-[32px]"
+        style={{ bottom: 48 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.6, delay: 1.4, ease: "easeOut" }}
-      >
-        <div
-          className="font-sans text-[13px] uppercase"
-          style={{ fontWeight: 700, letterSpacing: "0.02em", color: "#F5F1E8", textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
-        >
-          Exposure
-        </div>
-        <div
-          className="mt-1.5 font-sans text-[9px] uppercase"
-          style={{ fontWeight: 500, letterSpacing: "0.08em", color: "rgba(245,241,232,0.5)", textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}
-        >
-          By 29029
-        </div>
-      </motion.div>
+      />
 
     </main>
   );
