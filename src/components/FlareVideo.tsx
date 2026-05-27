@@ -35,8 +35,6 @@ export function FlareVideo({
     const video = videoRef.current;
     if (!video) return;
 
-    let disposed = false;
-
     const start = () => {
       video.playbackRate = 1;
       video.currentTime = 0;
@@ -51,7 +49,6 @@ export function FlareVideo({
     }
 
     return () => {
-      disposed = true;
       video.removeEventListener("loadedmetadata", start);
     };
   }, []);
