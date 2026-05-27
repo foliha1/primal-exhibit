@@ -82,36 +82,18 @@ function Index() {
             style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#E7E6E1", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
           >
 
-            {(() => {
-              const words = [
-                { text: "Most" },
-                { text: "teams" },
-                { text: "would" },
-                { text: "never", skew: true },
-                { text: "do" },
-                { text: "this." },
-              ];
-              return words.map((w, i) => (
-                <span key={i}>
-                  <motion.span
-                    style={{
-                      display: "inline-block",
-                      ...(w.skew ? { transform: "skewX(-12deg)" } : {}),
-                    }}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                      duration: 1.0,
-                      delay: 0.1 + i * 0.3,
-                      ease: easeOut,
-                    }}
-                  >
-                    {w.text}
-                  </motion.span>
-                  {i < words.length - 1 ? " " : ""}
-                </span>
-              ));
-            })()}
+            <motion.span
+              style={{ display: "block" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: easeOut }}
+            >
+              <span style={{ display: "block" }}>Most teams would</span>
+              <span style={{ display: "block" }}>
+                <em style={{ fontStyle: "italic" }}>Never</em> do this.
+              </span>
+            </motion.span>
+
           </h1>
 
 
