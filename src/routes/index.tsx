@@ -95,6 +95,8 @@ function Index() {
                   >
                     {w.text}
                   </motion.span>
+                  {i === 1 || i === 3 ? <br className="md:hidden" /> : null}
+                  {i === 2 ? <br className="hidden md:block" /> : null}
                   {i < words.length - 1 ? " " : ""}
                 </span>
               ));
