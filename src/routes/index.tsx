@@ -112,7 +112,7 @@ function Index() {
 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 2.6, ease: easeOut }}
+            transition={{ duration: 2.0, delay: 3.0, ease: easeOut }}
           >
             {`Some moments don't build a team. They reveal one.\n\n\nBy the time most leaders see what they're working with, the moment has already passed its verdict. EXPOSURE puts that revelation on your calendar, on your terms, before the stakes choose the timing for you.`}
           </motion.p>
