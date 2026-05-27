@@ -81,9 +81,9 @@ function Index() {
 
             <motion.span
               style={{ display: "block" }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: easeOut }}
+              initial={{ opacity: 0, filter: "blur(20px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1.6, delay: 0.4, ease: easeOut }}
             >
               <span style={{ display: "block", whiteSpace: "nowrap" }}>Most teams would</span>
               <span style={{ display: "block", whiteSpace: "nowrap" }}>
@@ -107,7 +107,7 @@ function Index() {
 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.0, delay: 1.8, ease: easeOut }}
+            transition={{ duration: 1.0, delay: 2.2, ease: easeOut }}
           >
             {`Some moments don't build a team. They reveal one.\n\n\nBy the time most leaders see what they're working with, the moment has already passed its verdict. EXPOSURE puts that revelation on your calendar, on your terms, before the stakes choose the timing for you.`}
           </motion.p>
