@@ -143,7 +143,7 @@ function Index() {
         className="absolute left-1/2 z-10 -translate-x-1/2 w-[24px] h-[24px] md:w-[32px] md:h-[32px]"
         style={{
           bottom: 48,
-          backgroundColor: "#E7E6E1",
+          backgroundColor: "#E4002B",
           WebkitMaskImage: "url(/logos/29029_Triangle.svg)",
           maskImage: "url(/logos/29029_Triangle.svg)",
           WebkitMaskRepeat: "no-repeat",
