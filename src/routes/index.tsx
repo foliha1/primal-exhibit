@@ -70,7 +70,7 @@ function Index() {
         style={{ top: 48 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+        transition={{ duration: 1.0, delay: 3.2, ease: easeOut }}
       />
 
       {/* Type column — centered horizontally and vertically */}
@@ -79,19 +79,16 @@ function Index() {
           <motion.h1
             className="font-serif text-[44px] uppercase md:text-[88px]"
             style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...spring, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.4, ease: easeOut }}
           >
             Most teams would{" "}
-            <motion.span
+            <span
               style={{ display: "inline-block", transform: "skewX(-12deg)", fontWeight: 300, color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ...spring, delay: 0.6 }}
             >
               never
-            </motion.span>{" "}
+            </span>{" "}
             do this.
           </motion.h1>
 
@@ -99,9 +96,9 @@ function Index() {
           <motion.p
             className="mt-8 max-w-[480px] font-sans text-[16px] leading-[1.6]"
             style={{ fontWeight: 500, color: "rgba(245,241,232,0.72)", textShadow: "0 1px 16px rgba(0,0,0,0.5)" }}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...spring, delay: 1.0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 1.8, ease: easeOut }}
           >
             EXPOSURE is a confrontation built for the people who decide. A
             deliberate encounter with the questions you've been outpacing.
@@ -119,7 +116,7 @@ function Index() {
         style={{ bottom: 48 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 1.4, ease: "easeOut" }}
+        transition={{ duration: 1.0, delay: 3.6, ease: easeOut }}
       />
 
     </main>
