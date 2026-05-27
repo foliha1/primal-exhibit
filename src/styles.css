@@ -173,3 +173,24 @@
     color: var(--color-foreground);
   }
 }
+
+/* FlareVideo: rotated 90° CW, sized so visual height fills viewport */
+.flare-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transform-origin: top left;
+  /* mobile/tablet: visual height = 120vh; CSS width=120vh, CSS height=120vh*9/16 */
+  width: 120vh;
+  height: 67.5vh;
+  transform: rotate(90deg) translateY(-100%) scale(1.5);
+}
+@media (min-width: 1024px) {
+  .flare-video {
+    /* desktop: visual width = 100vw; CSS height=100vw, CSS width=100vw*16/9 */
+    width: calc(100vw * 16 / 9);
+    height: 100vw;
+    transform: rotate(90deg) translateY(-100%);
+  }
+}
