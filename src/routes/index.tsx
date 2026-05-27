@@ -87,7 +87,7 @@ function Index() {
               transition={{
                 opacity: { duration: 2.0, delay: 0, ease: easeOut },
                 filter: { duration: 2.0, delay: 0, ease: easeOut },
-                y: { duration: 1.2, delay: 2.4, ease: easePush },
+                y: { duration: 1.5, delay: 2.4, ease: easePush },
               }}
             >
               <span style={{ display: "block", whiteSpace: "nowrap" }}>Most teams would</span>
