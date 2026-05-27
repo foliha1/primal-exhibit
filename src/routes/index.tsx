@@ -79,8 +79,9 @@ function Index() {
         <div className="flex w-full max-w-[640px] flex-col items-center">
           <h1
             className="font-serif text-[44px] uppercase md:text-[88px]"
-            style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
+            style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#E7E6E1", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
           >
+
             {(() => {
               const words = [
                 { text: "Most" },
