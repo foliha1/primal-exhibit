@@ -97,13 +97,8 @@ export function FlareVideo({
       video.addEventListener("loadedmetadata", start, { once: true });
     }
 
-    setTimeout(() => {
-      if (videoRef.current) {
-        const r = videoRef.current.getBoundingClientRect();
-        const cs = getComputedStyle(videoRef.current);
-        console.log("[FlareVideo rect]", { x: r.x, y: r.y, w: r.width, h: r.height, cssW: cs.width, cssH: cs.height, transform: cs.transform, transformOrigin: cs.transformOrigin });
-      }
-    }, 800);
+
+
 
     return () => {
       disposed = true;
