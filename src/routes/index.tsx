@@ -36,13 +36,7 @@ function Index() {
         className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 md:opacity-100"
         style={{ backgroundColor: "#22211F" }}
       >
-        <FlareVideo
-          className="absolute top-0 left-0 object-cover w-[120vh] h-[67.5vh] [--flare-scale:1.5] md:w-[calc(100vw_*_16_/_9)] md:h-[100vw] md:[--flare-scale:1]"
-          style={{
-            transformOrigin: "top left",
-            transform: "rotate(90deg) translateY(-100%) scale(var(--flare-scale))",
-          }}
-        />
+        <FlareVideo />
       </div>
 
 
