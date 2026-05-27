@@ -108,7 +108,7 @@ function Index() {
         </div>
         <div
           className="mt-1.5 font-sans text-[9px] font-normal uppercase tracking-[0.52em]"
-          style={{ color: "rgba(245,241,232,0.5)" }}
+          style={{ color: "rgba(245,241,232,0.5)", textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}
         >
           By 29029
         </div>
