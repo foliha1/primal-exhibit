@@ -30,20 +30,30 @@ function Index() {
       className="relative min-h-screen w-full overflow-hidden"
       style={{ backgroundColor: "#0A0A0A" }}
     >
-      {/* Video flare — full-bleed beneath the centered type column */}
+      {/* Video flare — rotated 90° CW, full-bleed beneath the centered type column */}
       <div
         aria-hidden
-        className="pointer-events-none absolute opacity-60 md:opacity-100"
-        style={{
-          left: 0,
-          top: "50%",
-          width: "132vw",
-          height: "132vh",
-          transform: "translateY(-50%)",
-        }}
+        className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 md:opacity-100"
       >
-        <FlareVideo className="absolute inset-0 h-full w-full object-cover" />
+        <FlareVideo
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            width: "110vh",
+            height: "110vw",
+            objectFit: "cover",
+            transform: "translate(-50%, -50%) rotate(90deg)",
+            transformOrigin: "center center",
+            WebkitMaskImage:
+              "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
+
+          }}
+        />
       </div>
+
 
       {/* Grain overlay — above video, below type */}
       <div
