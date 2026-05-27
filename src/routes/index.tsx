@@ -106,8 +106,8 @@ function Index() {
                 y: { duration: 1.5, delay: 2.5, ease: easePush },
               }}
             >
-              <span style={{ display: "block", whiteSpace: "nowrap" }}>Most teams would</span>
-              <span style={{ display: "block", whiteSpace: "nowrap" }}>
+              <span style={{ display: "block" }}>Most teams would</span>
+              <span style={{ display: "block" }}>
                 <em style={{ fontStyle: "italic" }}>Never</em> do this.
               </span>
             </motion.span>
