@@ -3,16 +3,22 @@ import { useEffect, useState } from "react";
 const SRC = "/exposure-flare-pingpong.mp4";
 
 function useFlareSize() {
-  const [size, setSize] = useState({ w: 0, h: 0 });
+  const [size, setSize] = useState({ cssWidth: 0, cssHeight: 0 });
   useEffect(() => {
     const compute = () => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      // Oversize generously; parent has overflow:hidden so excess is clipped.
-      // 9:16 visual aspect (w:h) after rotation.
-      const visualH = Math.max(vh, vw * 16 / 9) * 1.2;
-      const visualW = visualH * 9 / 16;
-      setSize({ w: visualH, h: visualW }); // CSS dims swap due to rotate(90deg)
+      if (vw >= 768) {
+        // Desktop/tablet: visual width = 100vw, visual height = 100vw * 16/9.
+        // Rotation swaps axes, so CSS width = visual height, CSS height = visual width.
+        setSize({ cssWidth: vw * (16 / 9), cssHeight: vw });
+      } else {
+        // Mobile: visual height = 120vh, scaled 1.6x so sides bleed past 100vw.
+        const scale = 1.6;
+        const visualH = vh * 1.2 * scale;
+        const visualW = visualH * (9 / 16);
+        setSize({ cssWidth: visualH, cssHeight: visualW });
+      }
     };
     compute();
     window.addEventListener("resize", compute);
@@ -21,6 +27,7 @@ function useFlareSize() {
   return size;
 }
 
+
 export function FlareVideo({
   className,
   style,
@@ -28,7 +35,7 @@ export function FlareVideo({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const { w, h } = useFlareSize();
+  const { cssWidth, cssHeight } = useFlareSize();
 
   return (
     <video
@@ -46,8 +53,9 @@ export function FlareVideo({
         objectFit: "cover",
         transformOrigin: "top left",
         transform: "rotate(90deg) translateY(-100%)",
-        width: w ? `${w}px` : undefined,
-        height: h ? `${h}px` : undefined,
+        width: cssWidth ? `${cssWidth}px` : undefined,
+        height: cssHeight ? `${cssHeight}px` : undefined,
+
         ...style,
       }}
     >
