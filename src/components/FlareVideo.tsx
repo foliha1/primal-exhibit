@@ -73,13 +73,8 @@ export function FlareVideo({
       rafId = requestAnimationFrame(reverseStep);
     };
 
-    const onTimeUpdate = () => {
-      if (direction !== "forward") return;
-      const d = video.duration;
-      if (!isFinite(d) || d <= 0) return;
-      if (video.currentTime >= d - 0.05) {
-        startReverse();
-      }
+    const onEnded = () => {
+      startReverse();
     };
 
     const start = () => {
@@ -89,7 +84,7 @@ export function FlareVideo({
       if (p) p.catch(() => {});
     };
 
-    video.addEventListener("timeupdate", onTimeUpdate);
+    video.addEventListener("ended", onEnded);
 
     if (video.readyState >= 1 && video.duration > 0) {
       start();
@@ -97,13 +92,10 @@ export function FlareVideo({
       video.addEventListener("loadedmetadata", start, { once: true });
     }
 
-
-
-
     return () => {
       disposed = true;
       stopRaf();
-      video.removeEventListener("timeupdate", onTimeUpdate);
+      video.removeEventListener("ended", onEnded);
       video.removeEventListener("loadedmetadata", start);
     };
   }, []);
