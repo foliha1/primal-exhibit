@@ -73,7 +73,7 @@ function Index() {
 
       {/* Type column — centered horizontally and vertically */}
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
-        <div className="flex w-full max-w-[640px] flex-col items-center">
+        <div className="flex w-full max-w-[900px] flex-col items-center">
           <h1
             className="font-serif text-[35px] uppercase md:text-[70px]"
             style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#E7E6E1", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
@@ -85,8 +85,8 @@ function Index() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: easeOut }}
             >
-              <span style={{ display: "block" }}>Most teams would</span>
-              <span style={{ display: "block" }}>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>Most teams would</span>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>
                 <em style={{ fontStyle: "italic" }}>Never</em> do this.
               </span>
             </motion.span>
