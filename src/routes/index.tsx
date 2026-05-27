@@ -60,15 +60,14 @@ function Index() {
         <div className="flex w-full max-w-[640px] flex-col items-center">
           <motion.h1
             className="font-serif text-[44px] leading-[1.04] tracking-[-0.02em] md:text-[88px]"
-            style={{ color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
+            style={{ fontWeight: 300, color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 0.4 }}
           >
             What you{" "}
             <motion.em
-              className="italic"
-              style={{ fontStyle: "italic", color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
+              style={{ fontStyle: "italic", fontWeight: 300, color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...spring, delay: 0.6 }}
@@ -79,8 +78,8 @@ function Index() {
           </motion.h1>
 
           <motion.p
-            className="mt-8 max-w-[480px] font-sans text-[16px] font-light leading-[1.6]"
-            style={{ color: "rgba(245,241,232,0.72)", textShadow: "0 1px 16px rgba(0,0,0,0.5)" }}
+            className="mt-8 max-w-[480px] font-sans text-[16px] leading-[1.6]"
+            style={{ fontWeight: 500, color: "rgba(245,241,232,0.72)", textShadow: "0 1px 16px rgba(0,0,0,0.5)" }}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 1.0 }}
@@ -101,18 +100,19 @@ function Index() {
         transition={{ duration: 1.6, delay: 1.4, ease: "easeOut" }}
       >
         <div
-          className="font-sans text-[13px] font-medium uppercase tracking-[0.42em]"
-          style={{ color: "#F5F1E8", textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
+          className="font-sans text-[13px] uppercase"
+          style={{ fontWeight: 700, letterSpacing: "0.02em", color: "#F5F1E8", textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
         >
           Exposure
         </div>
         <div
-          className="mt-1.5 font-sans text-[9px] font-normal uppercase tracking-[0.52em]"
-          style={{ color: "rgba(245,241,232,0.5)", textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}
+          className="mt-1.5 font-sans text-[9px] uppercase"
+          style={{ fontWeight: 500, letterSpacing: "0.08em", color: "rgba(245,241,232,0.5)", textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}
         >
           By 29029
         </div>
       </motion.div>
+
     </main>
   );
 }
