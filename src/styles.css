@@ -10,6 +10,13 @@
   src: url("/fonts/Canela-Light.woff2") format("woff2");
 }
 @font-face {
+  font-family: "Canela";
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/Canela-LightItalic.woff2") format("woff2");
+}
+@font-face {
   font-family: "PP Neue Montreal";
   font-weight: 500;
   font-style: normal;
