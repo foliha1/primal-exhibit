@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const CROSSFADE_MS = 1200;
+const PRELOAD_LEAD_MS = 2000;
 const SRC = "/exposure-flare.mp4";
 
 export function FlareVideo({
@@ -21,41 +21,21 @@ export function FlareVideo({
     const videos = [a, b];
     let activeIdx = 0;
     const timers: number[] = [];
-    const rafs: number[] = [];
     let disposed = false;
 
-    // Initial state
+    // Both videos fully opaque, always. Stacking handled by z-index.
     a.style.opacity = "1";
-    b.style.opacity = "0";
+    b.style.opacity = "1";
+    a.style.zIndex = "2";
+    b.style.zIndex = "1";
     b.pause();
     b.currentTime = 0;
-
-    const tweenOpacity = (
-      el: HTMLVideoElement,
-      from: number,
-      to: number,
-      durationMs: number,
-    ) => {
-      const start = performance.now();
-      const step = (now: number) => {
-        if (disposed) return;
-        const t = Math.min(1, (now - start) / durationMs);
-        // ease-in-out cubic
-        const eased =
-          t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-        el.style.opacity = String(from + (to - from) * eased);
-        if (t < 1) {
-          rafs.push(requestAnimationFrame(step));
-        }
-      };
-      rafs.push(requestAnimationFrame(step));
-    };
 
     const scheduleHandoff = (current: HTMLVideoElement) => {
       const duration = current.duration;
       if (!isFinite(duration) || duration <= 0) return;
       const remaining = (duration - current.currentTime) * 1000;
-      const fireIn = Math.max(0, remaining - CROSSFADE_MS);
+      const fireIn = Math.max(0, remaining - PRELOAD_LEAD_MS);
 
       const timer = window.setTimeout(() => {
         if (disposed) return;
@@ -63,28 +43,34 @@ export function FlareVideo({
         const outgoing = videos[activeIdx];
 
         incoming.currentTime = 0;
+
+        const onPlaying = () => {
+          if (disposed) return;
+          // Swap z-index so incoming sits on top. Since both videos show the
+          // same content from t=0, this is visually seamless.
+          incoming.style.zIndex = "2";
+          outgoing.style.zIndex = "1";
+
+          // After incoming has clearly taken over, reset the outgoing video.
+          const resetTimer = window.setTimeout(() => {
+            if (disposed) return;
+            outgoing.pause();
+            outgoing.currentTime = 0;
+            activeIdx = 1 - activeIdx;
+            scheduleHandoff(incoming);
+          }, 200);
+          timers.push(resetTimer);
+        };
+
+        incoming.addEventListener("playing", onPlaying, { once: true });
+
         const playPromise = incoming.play();
         if (playPromise) playPromise.catch(() => {});
-
-        tweenOpacity(outgoing, 1, 0, CROSSFADE_MS);
-        tweenOpacity(incoming, 0, 1, CROSSFADE_MS);
-
-        // After crossfade completes, reset the outgoing video to standby.
-        const resetTimer = window.setTimeout(() => {
-          if (disposed) return;
-          outgoing.pause();
-          outgoing.currentTime = 0;
-          outgoing.style.opacity = "0";
-          activeIdx = 1 - activeIdx;
-          scheduleHandoff(incoming);
-        }, CROSSFADE_MS + 50);
-        timers.push(resetTimer);
       }, fireIn);
       timers.push(timer);
     };
 
     const onMetaA = () => {
-      // Start the loop once we know the duration.
       const playPromise = a.play();
       if (playPromise) playPromise.catch(() => {});
       scheduleHandoff(a);
@@ -99,7 +85,6 @@ export function FlareVideo({
     return () => {
       disposed = true;
       timers.forEach((t) => clearTimeout(t));
-      rafs.forEach((r) => cancelAnimationFrame(r));
       a.removeEventListener("loadedmetadata", onMetaA);
     };
   }, []);
