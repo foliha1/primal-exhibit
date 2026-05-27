@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const SRC = "/exposure-flare.mp4";
+const SRC = "/exposure-flare-pingpong.mp4";
 
 function useFlareSize() {
   const [size, setSize] = useState({ w: 0, h: 0 });
@@ -31,51 +31,11 @@ export function FlareVideo({
   const videoRef = useRef<HTMLVideoElement>(null);
   const { w, h } = useFlareSize();
 
-
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    let direction: "forward" | "reverse" = "forward";
-    let rafId: number | null = null;
-    let lastFrameTime = 0;
     let disposed = false;
-
-    const stopRaf = () => {
-      if (rafId != null) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
-    };
-
-    const reverseStep = (now: number) => {
-      if (disposed) return;
-      const deltaSec = (now - lastFrameTime) / 1000;
-      lastFrameTime = now;
-      const next = video.currentTime - deltaSec;
-      if (next <= 0.05) {
-        video.currentTime = 0;
-        stopRaf();
-        direction = "forward";
-        video.playbackRate = 1;
-        const p = video.play();
-        if (p) p.catch(() => {});
-        return;
-      }
-      video.currentTime = next;
-      rafId = requestAnimationFrame(reverseStep);
-    };
-
-    const startReverse = () => {
-      video.pause();
-      direction = "reverse";
-      lastFrameTime = performance.now();
-      rafId = requestAnimationFrame(reverseStep);
-    };
-
-    const onEnded = () => {
-      startReverse();
-    };
 
     const start = () => {
       video.playbackRate = 1;
@@ -83,8 +43,6 @@ export function FlareVideo({
       const p = video.play();
       if (p) p.catch(() => {});
     };
-
-    video.addEventListener("ended", onEnded);
 
     if (video.readyState >= 1 && video.duration > 0) {
       start();
@@ -94,8 +52,6 @@ export function FlareVideo({
 
     return () => {
       disposed = true;
-      stopRaf();
-      video.removeEventListener("ended", onEnded);
       video.removeEventListener("loadedmetadata", start);
     };
   }, []);
@@ -105,6 +61,7 @@ export function FlareVideo({
       ref={videoRef}
       muted
       playsInline
+      loop
       preload="auto"
       aria-hidden
       className={className}
