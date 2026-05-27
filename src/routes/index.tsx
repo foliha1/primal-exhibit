@@ -37,13 +37,9 @@ function Index() {
         style={{
           left: 0,
           top: "50%",
-          width: "110vw",
-          height: "110vh",
+          width: "132vw",
+          height: "132vh",
           transform: "translateY(-50%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
-          maskImage:
-            "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
         }}
       >
         <FlareVideo className="absolute inset-0 h-full w-full object-cover" />
@@ -64,7 +60,7 @@ function Index() {
         <div className="flex w-full max-w-[640px] flex-col items-center">
           <motion.h1
             className="font-serif text-[44px] leading-[1.04] tracking-[-0.02em] md:text-[88px]"
-            style={{ color: "#F5F1E8" }}
+            style={{ color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 0.4 }}
@@ -72,7 +68,7 @@ function Index() {
             What you{" "}
             <motion.em
               className="italic"
-              style={{ fontStyle: "italic", color: "#F5F1E8" }}
+              style={{ fontStyle: "italic", color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...spring, delay: 0.6 }}
@@ -84,7 +80,7 @@ function Index() {
 
           <motion.p
             className="mt-8 max-w-[480px] font-sans text-[16px] font-light leading-[1.6]"
-            style={{ color: "rgba(245,241,232,0.72)" }}
+            style={{ color: "rgba(245,241,232,0.72)", textShadow: "0 1px 16px rgba(0,0,0,0.5)" }}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 1.0 }}
@@ -106,13 +102,13 @@ function Index() {
       >
         <div
           className="font-sans text-[13px] font-medium uppercase tracking-[0.42em]"
-          style={{ color: "#F5F1E8" }}
+          style={{ color: "#F5F1E8", textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
         >
           Exposure
         </div>
         <div
           className="mt-1.5 font-sans text-[9px] font-normal uppercase tracking-[0.52em]"
-          style={{ color: "rgba(245,241,232,0.5)" }}
+          style={{ color: "rgba(245,241,232,0.5)", textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}
         >
           By 29029
         </div>
