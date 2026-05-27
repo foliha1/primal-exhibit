@@ -102,7 +102,7 @@ function Index() {
       >
         <div
           className="font-sans text-[13px] font-medium uppercase tracking-[0.42em]"
-          style={{ color: "#F5F1E8" }}
+          style={{ color: "#F5F1E8", textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
         >
           Exposure
         </div>
