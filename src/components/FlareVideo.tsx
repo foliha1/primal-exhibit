@@ -1,6 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SRC = "/exposure-flare.mp4";
+
+function useFlareSize() {
+  const [size, setSize] = useState({ w: 0, h: 0 });
+  useEffect(() => {
+    const compute = () => {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      // After rotate(90deg) + translateY(-100%) with origin top-left:
+      //   visual_width  = CSS height
+      //   visual_height = CSS width
+      // We want visual_width >= vw AND visual_height >= vh, preserving 9:16 (visual w:h).
+      const visualW = Math.max(vw, vh * 9 / 16);
+      const visualH = visualW * 16 / 9;
+      setSize({ w: visualH, h: visualW }); // CSS dims (swapped)
+    };
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, []);
+  return size;
+}
 
 export function FlareVideo({
   className,
@@ -10,6 +31,8 @@ export function FlareVideo({
   style?: React.CSSProperties;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { w, h } = useFlareSize();
+
 
   useEffect(() => {
     const video = videoRef.current;
