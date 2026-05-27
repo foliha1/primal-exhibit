@@ -30,14 +30,8 @@ function Index() {
       className="relative min-h-screen w-full overflow-hidden"
       style={{ backgroundColor: "#0A0A0A" }}
     >
-      {/* Video flare — right 55% on desktop, full-bleed dim on mobile */}
-      <video
-        autoPlay
-        muted
-        playsInline
-        loop
-        preload="auto"
-        aria-hidden
+      {/* Video flare — two stacked videos crossfading to mask the loop seam */}
+      <FlareVideo
         className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60 md:left-auto md:right-0 md:top-0 md:h-screen md:w-[55vw] md:opacity-100"
         style={{
           WebkitMaskImage:
@@ -45,9 +39,8 @@ function Index() {
           maskImage:
             "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
         }}
-      >
-        <source src="/exposure-flare.mp4" type="video/mp4" />
-      </video>
+      />
+
 
       {/* Grain overlay — above video, below type */}
       <div
