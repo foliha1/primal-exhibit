@@ -31,7 +31,21 @@ function Index() {
       style={{ backgroundColor: "#0A0A0A" }}
     >
       {/* Video flare — full-bleed beneath the centered type column */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute opacity-60 md:opacity-100"
+        style={{
+          left: 0,
+          top: "50%",
+          width: "110vw",
+          height: "110vh",
+          transform: "translateY(-50%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
+        }}
+      >
         <FlareVideo className="absolute inset-0 h-full w-full object-cover" />
       </div>
 
