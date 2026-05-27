@@ -103,16 +103,26 @@ function Index() {
 
 
           <motion.p
-            className="mt-8 max-w-[480px] font-sans text-[16px] leading-[1.6]"
-            style={{ fontWeight: 500, color: "rgba(245,241,232,0.72)", textShadow: "0 1px 16px rgba(0,0,0,0.5)" }}
+            className="mt-8 max-w-[480px] font-sans text-[16px]"
+            style={{
+              fontWeight: 500,
+              color: "rgba(245,241,232,0.72)",
+              textShadow: "0 1px 16px rgba(0,0,0,0.5)",
+              lineHeight: 1.6,
+              letterSpacing: "0.02em",
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.0, delay: 1.9, ease: easeOut }}
           >
-            EXPOSURE is a confrontation built for the people who decide. A
-            deliberate encounter with the questions you've been outpacing.
-            Discomfort, structured. Clarity, earned. The work begins where the
-            performance ends.
+            The moments that define your organization, hard quarters,
+            existential pivots, leadership crises, reveal exactly what your team
+            is capable of. Most leaders discover their team's true capacity in
+            those moments. By then, it's too late to build it.
+            <br />
+            <strong style={{ fontWeight: 700 }}>
+              EXPOSURE is how you build capacity before those moments arrive.
+            </strong>
           </motion.p>
         </div>
       </div>
