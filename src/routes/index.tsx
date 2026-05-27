@@ -36,7 +36,7 @@ function Index() {
         className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 md:opacity-100"
         style={{ backgroundColor: "#22211F" }}
       >
-        <FlareVideo className="flare-video" />
+        <FlareVideo />
       </div>
 
 
