@@ -70,27 +70,47 @@ function Index() {
         style={{ top: 48 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.0, delay: 3.2, ease: easeOut }}
+        transition={{ duration: 1.0, delay: 2.2, ease: easeOut }}
       />
 
       {/* Type column — centered horizontally and vertically */}
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
         <div className="flex w-full max-w-[640px] flex-col items-center">
-          <motion.h1
+          <h1
             className="font-serif text-[44px] uppercase md:text-[88px]"
             style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4, ease: easeOut }}
           >
-            Most teams would{" "}
-            <span
-              style={{ display: "inline-block", transform: "skewX(-12deg)", fontWeight: 300, color: "#F5F1E8", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
-            >
-              never
-            </span>{" "}
-            do this.
-          </motion.h1>
+            {(() => {
+              const words = [
+                { text: "Most" },
+                { text: "teams" },
+                { text: "would" },
+                { text: "never", skew: true },
+                { text: "do" },
+                { text: "this." },
+              ];
+              return words.map((w, i) => (
+                <span key={i}>
+                  <motion.span
+                    style={{
+                      display: "inline-block",
+                      ...(w.skew ? { transform: "skewX(-12deg)" } : {}),
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 1.0,
+                      delay: 0.1 + i * 0.3,
+                      ease: easeOut,
+                    }}
+                  >
+                    {w.text}
+                  </motion.span>
+                  {i < words.length - 1 ? " " : ""}
+                </span>
+              ));
+            })()}
+          </h1>
 
 
           <motion.p
@@ -98,7 +118,7 @@ function Index() {
             style={{ fontWeight: 500, color: "rgba(245,241,232,0.72)", textShadow: "0 1px 16px rgba(0,0,0,0.5)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 1.8, ease: easeOut }}
+            transition={{ duration: 1.0, delay: 1.9, ease: easeOut }}
           >
             EXPOSURE is a confrontation built for the people who decide. A
             deliberate encounter with the questions you've been outpacing.
@@ -116,7 +136,7 @@ function Index() {
         style={{ bottom: 48 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.0, delay: 3.6, ease: easeOut }}
+        transition={{ duration: 1.0, delay: 2.2, ease: easeOut }}
       />
 
     </main>
