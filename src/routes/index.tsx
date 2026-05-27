@@ -46,9 +46,10 @@ function Index() {
             transform: "translate(-50%, -50%) rotate(90deg)",
             transformOrigin: "center center",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+              "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
             maskImage:
-              "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+              "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
+
           }}
         />
       </div>
