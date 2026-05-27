@@ -53,8 +53,9 @@ export function FlareVideo({
         objectFit: "cover",
         transformOrigin: "top left",
         transform: "rotate(90deg) translateY(-100%)",
-        width: w ? `${w}px` : undefined,
-        height: h ? `${h}px` : undefined,
+        width: cssWidth ? `${cssWidth}px` : undefined,
+        height: cssHeight ? `${cssHeight}px` : undefined,
+
         ...style,
       }}
     >
