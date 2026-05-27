@@ -105,7 +105,8 @@ function Index() {
               color: "#E7E6E1",
               textShadow: "0 1px 16px rgba(0,0,0,0.5)",
               lineHeight: 1.6,
-              letterSpacing: "0.02em",
+              letterSpacing: "0.03em",
+
             }}
 
             initial={{ opacity: 0 }}
