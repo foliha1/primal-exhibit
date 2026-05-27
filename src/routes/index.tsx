@@ -31,15 +31,19 @@ function Index() {
       style={{ backgroundColor: "#0A0A0A" }}
     >
       {/* Video flare — two stacked videos crossfading to mask the loop seam */}
-      <FlareVideo
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60 md:left-auto md:right-0 md:top-0 md:h-screen md:w-[55vw] md:opacity-100"
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-60 md:left-auto md:right-0 md:top-0 md:bottom-0 md:h-screen md:w-[55vw] md:opacity-100"
         style={{
           WebkitMaskImage:
             "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
           maskImage:
             "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
         }}
-      />
+      >
+        <FlareVideo className="absolute inset-0 h-full w-full object-cover" />
+      </div>
+
 
 
       {/* Grain overlay — above video, below type */}
