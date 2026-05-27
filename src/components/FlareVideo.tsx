@@ -115,9 +115,20 @@ export function FlareVideo({
       preload="auto"
       aria-hidden
       className={className}
-      style={style}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        objectFit: "cover",
+        transformOrigin: "top left",
+        transform: "rotate(90deg) translateY(-100%)",
+        width: w ? `${w}px` : undefined,
+        height: h ? `${h}px` : undefined,
+        ...style,
+      }}
     >
       <source src={SRC} type="video/mp4" />
     </video>
   );
 }
+
