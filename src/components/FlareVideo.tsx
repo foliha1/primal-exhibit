@@ -100,19 +100,20 @@ export function FlareVideo({
       video.addEventListener("loadedmetadata", start, { once: true });
     }
 
-    return () => {
-      disposed = true;
-      stopRaf();
-      video.removeEventListener("timeupdate", onTimeUpdate);
-      video.removeEventListener("loadedmetadata", start);
-    };
     setTimeout(() => {
       if (videoRef.current) {
         const r = videoRef.current.getBoundingClientRect();
         const cs = getComputedStyle(videoRef.current);
         console.log("[FlareVideo rect]", { x: r.x, y: r.y, w: r.width, h: r.height, cssW: cs.width, cssH: cs.height, transform: cs.transform, transformOrigin: cs.transformOrigin });
       }
-    }, 500);
+    }, 800);
+
+    return () => {
+      disposed = true;
+      stopRaf();
+      video.removeEventListener("timeupdate", onTimeUpdate);
+      video.removeEventListener("loadedmetadata", start);
+    };
   }, []);
 
   return (
