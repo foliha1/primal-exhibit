@@ -122,6 +122,7 @@ function Index() {
             is capable of. Most leaders discover their team's true capacity in
             those moments. By then, it's too late to build it.
             <br />
+            <br />
             <strong style={{ fontWeight: 700 }}>
               EXPOSURE is how you build capacity before those moments arrive.
             </strong>
