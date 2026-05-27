@@ -50,8 +50,6 @@ function Index() {
             objectFit: "cover",
             transform: "rotate(90deg)",
             transformOrigin: "center center",
-            WebkitMaskImage: mask,
-            maskImage: mask,
           }}
         />
       </div>
