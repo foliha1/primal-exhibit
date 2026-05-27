@@ -109,7 +109,7 @@ function Index() {
 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.0, delay: 1.9, ease: easeOut }}
+            transition={{ duration: 1.0, delay: 1.8, ease: easeOut }}
           >
             Some moments don't build a team. They reveal one. By the time most
             leaders see what they're working with, the moment has already passed
