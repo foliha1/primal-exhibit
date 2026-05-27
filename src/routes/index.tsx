@@ -52,15 +52,27 @@ function Index() {
       />
 
       {/* Top lockup — centered at top */}
-      <motion.img
-        src="/logos/EXPOSURE_Lockup_Light.svg"
-        alt="EXPOSURE by 29029"
-        className="absolute left-1/2 z-10 -translate-x-1/2 w-[140px] md:w-[180px]"
-        style={{ top: 48 }}
+      <motion.div
+        aria-label="EXPOSURE by 29029"
+        role="img"
+        className="absolute left-1/2 z-10 -translate-x-1/2 w-[140px] h-[60px] md:w-[180px] md:h-[76px]"
+        style={{
+          top: 48,
+          backgroundColor: "#E7E6E1",
+          WebkitMaskImage: "url(/logos/EXPOSURE_Lockup_Light.svg)",
+          maskImage: "url(/logos/EXPOSURE_Lockup_Light.svg)",
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "contain",
+          maskSize: "contain",
+          WebkitMaskPosition: "center",
+          maskPosition: "center",
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.0, delay: 2.2, ease: easeOut }}
       />
+
 
       {/* Type column — centered horizontally and vertically */}
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
