@@ -30,21 +30,10 @@ function Index() {
       className="relative min-h-screen w-full overflow-hidden"
       style={{ backgroundColor: "#0A0A0A" }}
     >
-      {/* Video flare — two stacked videos crossfading to mask the loop seam */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60 md:left-auto md:right-0 md:top-0 md:bottom-0 md:h-screen md:w-[55vw] md:opacity-100"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
-          maskImage:
-            "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
-        }}
-      >
+      {/* Video flare — full-bleed beneath the centered type column */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
         <FlareVideo className="absolute inset-0 h-full w-full object-cover" />
       </div>
-
-
 
       {/* Grain overlay — above video, below type */}
       <div
@@ -56,9 +45,9 @@ function Index() {
         }}
       />
 
-      {/* Type column — centered on mobile, left-anchored on desktop */}
-      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center md:justify-start md:pl-[8vw] md:pr-6 md:text-left">
-        <div className="flex w-full max-w-[520px] flex-col items-center md:items-start">
+      {/* Type column — centered horizontally and vertically */}
+      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
+        <div className="flex w-full max-w-[640px] flex-col items-center">
           <motion.h1
             className="font-serif text-[44px] leading-[1.04] tracking-[-0.02em] md:text-[88px]"
             style={{ color: "#F5F1E8" }}
@@ -94,9 +83,9 @@ function Index() {
         </div>
       </div>
 
-      {/* Logo lockup — bottom */}
+      {/* Logo lockup — bottom, centered */}
       <motion.div
-        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 text-center md:left-[8vw] md:translate-x-0 md:text-left"
+        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.6, delay: 1.4, ease: "easeOut" }}
