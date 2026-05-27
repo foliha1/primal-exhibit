@@ -8,11 +8,11 @@ function useFlareSize() {
     const compute = () => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      // Visual (post-rotate) width/height: cover viewport on both axes, keep 9:16.
-      const visualW = Math.max(vw, (vh * 9) / 16) * 1.1; // 10% bleed
-      const visualH = Math.max(vh * 1.1, (visualW * 16) / 9);
-      // CSS dims swap because of rotate(90deg)
-      setSize({ w: visualH, h: visualW });
+      // Oversize generously; parent has overflow:hidden so excess is clipped.
+      // 9:16 visual aspect (w:h) after rotation.
+      const visualH = Math.max(vh, vw * 16 / 9) * 1.2;
+      const visualW = visualH * 9 / 16;
+      setSize({ w: visualH, h: visualW }); // CSS dims swap due to rotate(90deg)
     };
     compute();
     window.addEventListener("resize", compute);
