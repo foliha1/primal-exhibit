@@ -37,13 +37,9 @@ function Index() {
         style={{
           left: 0,
           top: "50%",
-          width: "110vw",
-          height: "110vh",
+          width: "132vw",
+          height: "132vh",
           transform: "translateY(-50%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
-          maskImage:
-            "linear-gradient(to right, black 0%, black 70%, transparent 100%)",
         }}
       >
         <FlareVideo className="absolute inset-0 h-full w-full object-cover" />
