@@ -88,7 +88,7 @@ function Index() {
           maskPosition: "center",
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
 
       />
@@ -105,7 +105,7 @@ function Index() {
             <motion.span
               style={{ display: "block" }}
               initial={{ opacity: 0, filter: "blur(20px)", y: headlineOffset }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              animate={videoReady ? { opacity: 1, filter: "blur(0px)", y: 0 } : { opacity: 0, filter: "blur(20px)", y: headlineOffset }}
               transition={{
                 opacity: { duration: 2.0, delay: 0.1, ease: easeOut },
                 filter: { duration: 2.0, delay: 0.1, ease: easeOut },
@@ -134,7 +134,7 @@ function Index() {
             }}
 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
           >
             {`Some moments don't build a team.\nThey reveal one.\n\nBy the time most leaders see what they're working with, the moment has already passed its verdict. EXPOSURE puts that revelation on your calendar, on your terms, before the stakes choose the timing for you.`}
@@ -160,7 +160,7 @@ function Index() {
           maskPosition: "center",
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
       />
 
