@@ -35,7 +35,7 @@ export function FlareVideo({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const { w, h } = useFlareSize();
+  const { cssWidth, cssHeight } = useFlareSize();
 
   return (
     <video
