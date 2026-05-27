@@ -80,7 +80,7 @@ function Index() {
 
           <motion.p
             className="mt-8 max-w-[480px] font-sans text-[16px] font-light leading-[1.6]"
-            style={{ color: "rgba(245,241,232,0.72)" }}
+            style={{ color: "rgba(245,241,232,0.72)", textShadow: "0 1px 16px rgba(0,0,0,0.5)" }}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 1.0 }}
