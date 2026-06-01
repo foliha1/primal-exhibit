@@ -145,7 +145,7 @@ function Index() {
       </div>
 
       <motion.div
-        className="absolute left-1/2 z-10 -translate-x-1/2 font-sans"
+        className="absolute left-1/2 z-10 -translate-x-1/2 font-sans flex flex-col items-center md:flex-row md:whitespace-nowrap"
         style={{
           bottom: 112,
           color: "#E7E6E1",
@@ -154,14 +154,20 @@ function Index() {
           letterSpacing: "0.32em",
           textTransform: "uppercase",
           textShadow: "0 1px 12px rgba(0,0,0,0.5)",
-          whiteSpace: "nowrap",
         }}
         initial={{ opacity: 0 }}
         animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
       >
-        Commit&nbsp;&nbsp;•&nbsp;&nbsp;Prepare&nbsp;&nbsp;•&nbsp;&nbsp;Endure&nbsp;&nbsp;•&nbsp;&nbsp;Evolve
+        <span>Commit</span>
+        <span className="hidden md:inline">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span>Prepare</span>
+        <span className="hidden md:inline">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span>Endure</span>
+        <span className="hidden md:inline">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span>Evolve</span>
       </motion.div>
+
 
       {/* Bottom triangle mark — centered at bottom */}
       <motion.div
