@@ -102,21 +102,23 @@ function Index() {
             style={{ fontWeight: 300, lineHeight: 1, letterSpacing: "0.02em", color: "#E7E6E1", textShadow: "0 2px 24px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35)" }}
           >
 
-            <motion.span
-              style={{ display: "block" }}
-              initial={{ opacity: 0, filter: "blur(20px)", y: headlineOffset }}
-              animate={videoReady ? { opacity: 1, filter: "blur(0px)", y: 0 } : { opacity: 0, filter: "blur(20px)", y: headlineOffset }}
-              transition={{
-                opacity: { duration: 2.0, delay: 0.1, ease: easeOut },
-                filter: { duration: 2.0, delay: 0.1, ease: easeOut },
-                y: { duration: 1.5, delay: 2.5, ease: easePush },
-              }}
-            >
-              <span style={{ display: "block" }}>Most teams would</span>
-              <span style={{ display: "block" }}>
-                <em style={{ fontStyle: "italic" }}>Never</em> do this.
-              </span>
-            </motion.span>
+            {headlineOffset !== null && (
+              <motion.span
+                style={{ display: "block" }}
+                initial={{ opacity: 0, filter: "blur(20px)", y: headlineOffset }}
+                animate={videoReady ? { opacity: 1, filter: "blur(0px)", y: 0 } : { opacity: 0, filter: "blur(20px)", y: headlineOffset }}
+                transition={{
+                  opacity: { duration: 2.0, delay: 0.1, ease: easeOut },
+                  filter: { duration: 2.0, delay: 0.1, ease: easeOut },
+                  y: { duration: 1.5, delay: 2.5, ease: easePush },
+                }}
+              >
+                <span style={{ display: "block" }}>Most teams would</span>
+                <span style={{ display: "block" }}>
+                  <em style={{ fontStyle: "italic" }}>Never</em> do this.
+                </span>
+              </motion.span>
+            )}
 
           </h1>
 
