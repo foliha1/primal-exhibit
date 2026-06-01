@@ -137,10 +137,29 @@ function Index() {
             animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
           >
-            {`Some moments don't build a team.\nThey reveal one.\n\nBy the time most leaders see what they're working with, the moment has already passed its verdict. EXPOSURE puts that revelation on your calendar, on your terms, before the stakes choose the timing for you.`}
+            {`EXPOSURE takes your team to the edge and brings them back transformed.\n\nThis is where teams find out what they're actually made of.`}
           </motion.p>
         </div>
       </div>
+
+      <motion.div
+        className="absolute left-1/2 z-10 -translate-x-1/2 font-sans"
+        style={{
+          bottom: 112,
+          color: "#E7E6E1",
+          fontWeight: 500,
+          fontSize: 12,
+          letterSpacing: "0.32em",
+          textTransform: "uppercase",
+          textShadow: "0 1px 12px rgba(0,0,0,0.5)",
+          whiteSpace: "nowrap",
+        }}
+        initial={{ opacity: 0 }}
+        animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
+      >
+        Commit&nbsp;&nbsp;•&nbsp;&nbsp;Prepare&nbsp;&nbsp;•&nbsp;&nbsp;Endure&nbsp;&nbsp;•&nbsp;&nbsp;Evolve
+      </motion.div>
 
       {/* Bottom triangle mark — centered at bottom */}
       <motion.div
