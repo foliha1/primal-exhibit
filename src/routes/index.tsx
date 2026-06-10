@@ -138,7 +138,7 @@ function Index() {
               animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
             >
-              {`EXPOSURE takes your team to the edge and brings them back transformed.\n\nThis is where teams find out what they're actually made of.`}
+              {`EXPOSURE takes your team to the edge and brings them back transformed.\nThis is where teams find out what they're actually made of.`}
             </motion.p>
 
             <motion.div
