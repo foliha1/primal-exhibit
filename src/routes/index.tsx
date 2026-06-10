@@ -169,9 +169,8 @@ function Index() {
             <motion.a
               href="mailto:lisabarnes@29029.co?subject=Tell%20me%20about%20Exposure"
               aria-label="Tell me more about EXPOSURE"
-              className="group mt-3 md:mt-4 inline-flex items-center justify-center font-sans outline-none transition-colors duration-200 ease-out hover:bg-[#540C09] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#E7E6E1] focus-visible:ring-offset-[#22211F]"
+              className="group mt-3 md:mt-4 inline-flex items-center justify-center font-sans outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#E7E6E1] focus-visible:ring-offset-[#22211F]"
               style={{
-                backgroundColor: "#E1251B",
                 color: "#E7E6E1",
                 fontWeight: 700,
                 fontSize: 11,
@@ -183,9 +182,11 @@ function Index() {
                 paddingRight: 24,
                 borderRadius: 3,
               }}
-              initial={{ opacity: 0 }}
-              animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 2.0, delay: 4.25, ease: easeOut }}
+              initial={{ opacity: 0, backgroundColor: "#E1251B" }}
+              animate={videoReady ? { opacity: 1, backgroundColor: "#E1251B" } : { opacity: 0, backgroundColor: "#E1251B" }}
+              whileHover={{ backgroundColor: "#540C09" }}
+              whileFocus={{ backgroundColor: "#540C09" }}
+              transition={{ duration: 0.2, ease: easeOut, opacity: { duration: 2.0, delay: 4.25, ease: easeOut } }}
             >
               Tell Me More
             </motion.a>
