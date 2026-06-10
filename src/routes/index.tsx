@@ -196,12 +196,11 @@ function Index() {
 
 
       <motion.div
-        className="absolute left-1/2 z-10 -translate-x-1/2 font-sans flex flex-col items-center md:flex-row md:whitespace-nowrap"
+        className="absolute left-1/2 z-10 -translate-x-1/2 font-sans whitespace-nowrap text-[9px] md:text-[12px]"
         style={{
           bottom: 112,
           color: "#E7E6E1",
           fontWeight: 500,
-          fontSize: 12,
           letterSpacing: "0.32em",
           textTransform: "uppercase",
           textShadow: "0 1px 12px rgba(0,0,0,0.5)",
@@ -210,13 +209,7 @@ function Index() {
         animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
       >
-        <span>Commit</span>
-        <span className="hidden md:inline">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-        <span>Prepare</span>
-        <span className="hidden md:inline">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-        <span>Endure</span>
-        <span className="hidden md:inline">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-        <span>Evolve</span>
+        Commit&nbsp;&nbsp;•&nbsp;&nbsp;Prepare&nbsp;&nbsp;•&nbsp;&nbsp;Endure&nbsp;&nbsp;•&nbsp;&nbsp;Evolve
       </motion.div>
 
 
