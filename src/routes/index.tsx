@@ -27,7 +27,7 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 const easePush = [0.71, 0.02, 0.29, 0.88] as const;
 
 function Index() {
-  const bodyRef = useRef<HTMLParagraphElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
   const [headlineOffset, setHeadlineOffset] = useState<number | null>(null);
   const [videoReady, setVideoReady] = useState(false);
 
