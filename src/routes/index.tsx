@@ -145,6 +145,61 @@ function Index() {
       </div>
 
       <motion.div
+        className="absolute left-1/2 z-10 -translate-x-1/2 flex flex-col items-center"
+        style={{
+          bottom: "28%",
+          color: "#E7E6E1",
+        }}
+        initial={{ opacity: 0 }}
+        animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
+      >
+        <span
+          className="font-sans"
+          style={{
+            fontWeight: 500,
+            fontSize: 11,
+            letterSpacing: "0.4em",
+            textTransform: "uppercase",
+            textShadow: "0 1px 12px rgba(0,0,0,0.5)",
+            opacity: 0.7,
+            marginBottom: 16,
+          }}
+        >
+          Coming Soon
+        </span>
+        <a
+          href="mailto:lisabarnes@29029.co?subject=Tell%20me%20about%20Exposure"
+          className="font-sans group inline-flex items-center"
+          style={{
+            fontWeight: 700,
+            fontSize: 13,
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            textShadow: "0 1px 12px rgba(0,0,0,0.5)",
+            color: "#E7E6E1",
+            paddingBottom: 4,
+            borderBottom: "1px solid #E7E6E1",
+            transition: "letter-spacing 300ms cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+          aria-label="Tell me more about EXPOSURE"
+        >
+          <span style={{ display: "inline-block" }}>Tell Me More</span>
+          <span
+            aria-hidden
+            style={{
+              display: "inline-block",
+              marginLeft: 10,
+              transition: "transform 300ms cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+            className="group-hover:translate-x-1"
+          >
+            →
+          </span>
+        </a>
+      </motion.div>
+
+      <motion.div
         className="absolute left-1/2 z-10 -translate-x-1/2 font-sans flex flex-col items-center md:flex-row md:whitespace-nowrap"
         style={{
           bottom: 112,
