@@ -27,7 +27,7 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 const easePush = [0.71, 0.02, 0.29, 0.88] as const;
 
 function Index() {
-  const bodyRef = useRef<HTMLParagraphElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
   const [headlineOffset, setHeadlineOffset] = useState<number | null>(null);
   const [videoReady, setVideoReady] = useState(false);
 
@@ -123,24 +123,73 @@ function Index() {
           </h1>
 
 
-          <motion.p
-            ref={bodyRef}
-            className="mt-8 max-w-[560px] font-sans text-[14px] md:text-[16px]"
-            style={{
-              fontWeight: 500,
-              color: "#E7E6E1",
-              textShadow: "0 1px 16px rgba(0,0,0,0.5)",
-              lineHeight: 1.6,
-              letterSpacing: "0.03em",
-              whiteSpace: "pre-line",
-            }}
+          <div ref={bodyRef} className="flex flex-col items-center w-full">
+            <motion.p
+              className="mt-8 max-w-[560px] font-sans text-[14px] md:text-[16px]"
+              style={{
+                fontWeight: 500,
+                color: "#E7E6E1",
+                textShadow: "0 1px 16px rgba(0,0,0,0.5)",
+                lineHeight: 1.6,
+                letterSpacing: "0.03em",
+                whiteSpace: "pre-line",
+              }}
+              initial={{ opacity: 0 }}
+              animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
+            >
+              {`EXPOSURE takes your team to the edge and brings them back transformed.\n\nThis is where teams find out what they're actually made of.`}
+            </motion.p>
 
-            initial={{ opacity: 0 }}
-            animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
-          >
-            {`EXPOSURE takes your team to the edge and brings them back transformed.\n\nThis is where teams find out what they're actually made of.`}
-          </motion.p>
+            <motion.div
+              aria-hidden
+              className="mt-10 md:mt-12"
+              style={{ width: 64, height: 1, backgroundColor: "#E7E6E1", opacity: 0.7 }}
+              initial={{ opacity: 0 }}
+              animate={videoReady ? { opacity: 0.7 } : { opacity: 0 }}
+              transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
+            />
+
+            <motion.p
+              className="mt-6 md:mt-8 font-serif uppercase text-[24px] md:text-[32px]"
+              style={{
+                fontWeight: 300,
+                color: "#E7E6E1",
+                lineHeight: 1.1,
+                letterSpacing: "0.02em",
+                textShadow: "0 1px 16px rgba(0,0,0,0.5)",
+              }}
+              initial={{ opacity: 0 }}
+              animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
+            >
+              Coming <em style={{ fontStyle: "italic" }}>Soon</em>
+            </motion.p>
+
+            <motion.a
+              href="mailto:lisabarnes@29029.co?subject=Tell%20me%20about%20Exposure"
+              aria-label="Tell me more about EXPOSURE"
+              className="mt-6 md:mt-8 inline-flex items-center justify-center font-sans"
+              style={{
+                backgroundColor: "#E1251B",
+                color: "#E7E6E1",
+                fontWeight: 700,
+                fontSize: 11,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                paddingTop: 12,
+                paddingBottom: 12,
+                paddingLeft: 24,
+                paddingRight: 24,
+                borderRadius: 3,
+              }}
+              initial={{ opacity: 0 }}
+              animate={videoReady ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 2.0, delay: 3.25, ease: easeOut }}
+            >
+              Tell Me More
+            </motion.a>
+          </div>
         </div>
       </div>
 
