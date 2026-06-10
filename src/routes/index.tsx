@@ -184,8 +184,8 @@ function Index() {
               }}
               initial={{ opacity: 0, backgroundColor: "#E1251B" }}
               animate={videoReady ? { opacity: 1, backgroundColor: "#E1251B" } : { opacity: 0, backgroundColor: "#E1251B" }}
-              whileHover={{ backgroundColor: "#540C09" }}
-              whileFocus={{ backgroundColor: "#540C09" }}
+              whileHover={{ backgroundColor: "#A81912" }}
+              whileFocus={{ backgroundColor: "#A81912" }}
               transition={{ duration: 0.2, ease: easeOut, opacity: { duration: 2.0, delay: 4.25, ease: easeOut } }}
             >
               Tell Me More
