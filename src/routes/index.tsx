@@ -169,7 +169,7 @@ function Index() {
             <motion.a
               href="mailto:lisabarnes@29029.co?subject=Tell%20me%20about%20Exposure"
               aria-label="Tell me more about EXPOSURE"
-              className="group mt-3 md:mt-4 inline-flex items-center justify-center font-sans outline-none transition-colors duration-200 ease-out hover:bg-[#A81912] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#E7E6E1] focus-visible:ring-offset-[#22211F]"
+              className="group mt-3 md:mt-4 inline-flex items-center justify-center font-sans outline-none transition-colors duration-200 ease-out hover:bg-[#540C09] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#E7E6E1] focus-visible:ring-offset-[#22211F]"
               style={{
                 backgroundColor: "#E1251B",
                 color: "#E7E6E1",
